@@ -1,28 +1,44 @@
 module.exports = {
-  extends: [
-    '@mate-academy/eslint-config-react-typescript',
-    'plugin:react/recommended',
-  ],
+  extends: ['@mate-academy/eslint-config-react-typescript', 'plugin:cypress/recommended'],
   rules: {
-    // React
-    'react/prop-types': 0,
-    'react/self-closing-comp': 0,
-    'react/display-name': 0,
-
-    // JavaScript
-    semi: 0,
-    'no-proto': 0,
-    'no-unused-vars': 0,
-
-    // TypeScript
-    '@typescript-eslint/no-unused-vars': ['error'],
-    '@typescript-eslint/camelcase': 0,
-    '@typescript-eslint/explicit-module-boundary-types': 0,
-    '@typescript-eslint/ban-types': 0,
-    '@typescript-eslint/semi': ['error'],
+    'max-len': ['error', {
+      ignoreTemplateLiterals: true,
+      ignoreComments: true,
+    }],
+    "jsx-a11y/control-has-associated-label": ["off", {
+      "labelComponents": [],
+      "labelAttributes": [],
+      "controlComponents": [],
+      "assert": "both",
+      "depth": 25
+    }],
+    "jsx-a11y/label-has-associated-control": ["off", {
+      "labelComponents": [],
+      "labelAttributes": [],
+      "controlComponents": [],
+      "assert": "both",
+      "depth": 25
+    }],
+    "jsx-a11y/click-events-have-key-events": ["off", {
+      "labelComponents": [],
+      "labelAttributes": [],
+      "controlComponents": [],
+      "assert": "both",
+      "depth": 25
+    }],
+    "jsx-a11y/no-static-element-interactions": ["off", {
+      "labelComponents": [],
+      "labelAttributes": [],
+      "controlComponents": [],
+      "assert": "both",
+      "depth": 25
+    }],
+    "jsx-a11y/label-has-for": ["error", {
+      "components": [],
+      "required": {
+        "some": ["nesting", "id"]
+      },
+      "allowChildren": false
+    }]
   },
-  parser: '@typescript-eslint/parser',
-  plugins: [
-    '@typescript-eslint',
-  ],
 };
